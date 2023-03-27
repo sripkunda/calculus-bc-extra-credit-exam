@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm]{geometry}
+\setlength\parindent{0pt}
+\usepackage{amsthm}
+\newtheorem{question}{Question}
+\newtheorem*{definition}{Definition}
+\renewcommand*{\proofname}{Solution}
+
+\title{AP Calculus BC Extra Credit Exam}
+\author{Points are given as \textbf{extra credit} in the \textbf{tests category}}
+\date{December 2022}
+
+\begin{document}
+
+\maketitle
+
+A maximum of 15 extra credit points can be earned. Questions of higher point value are not necessarily more difficult. Partial credit will be given.
+
+\begin{question}[3 pts.]
+Let $C_0, \dots, C_n$ be real numbers. Show that if $$C_0 + \frac{C_1} 2 + \dots + \frac{C_n}{n+1} = 0,$$ there exists at least one real $0 < x < 1$ such that $$C_0 + C_1x + \dots + C_nx^n = 0.$$ 
+\end{question}
+
+\begin{question}[2 pts.]
+Let $x$ be a real number and suppose $|x| < 1.$ Show that $$\sum_{n = 0}^\infty x^n = \frac{1}{1 - x}.$$ You may assume that the Taylor series for $f(x) = \frac{1}{1-x}$ converges to $f(x)$ for $|x| < 1.$ However, you are not obligated to use the Taylor series to complete the proof.\\
+\end{question}
+
+\begin{question}[2 pt.]
+Show that if $f$ is a differentiable function defined for all real numbers which satisfies $$|f(x) - f(y)| \leq (x - y)^2$$ for all real numbers $x, y,$ then $f(x) = c$ for some constant $c.$
+\end{question}
+
+\begin{question}[4 pt.]
+The gamma function is a special function in mathematics. It is defined by the improper integral $$\Gamma(x) = \int_0^\infty t^{x-1}e^{-t} \, dt$$ for all real numbers $x.$ The symbol "$\Gamma$" is read "gamma." Use integration by parts and L'Hospital's rule to show that for all integers $n > 0$, $$\Gamma(n+1) = n\Gamma(n).$$ 
+\end{question}
+
+\begin{question}[2 pt.]
+Use Question 4 to show that for integers $n > 0,$ $$\Gamma(n) = (n - 1)!$$ This property of the Gamma function makes it important in many areas of mathematics and physics (e.g. quantum mechanics, probability/statistics, complex analysis).
+\end{question}
+
+\end{document}

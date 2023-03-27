@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm]{geometry}
+\setlength\parindent{0pt}
+\usepackage{amsthm}
+\newtheorem{question}{Question}
+\newtheorem*{definition}{Definition}
+\renewcommand*{\proofname}{Solution}
+
+\title{AP Calculus BC Extra Credit Exam (Answers)}
+\author{Points are given as \textbf{extra credit} in the \textbf{tests category}}
+\date{December 2022}
+
+\begin{document}
+
+\maketitle
+
+A maximum of 15 extra credit points can be earned. Questions of higher point value are not necessarily more difficult. Partial credit will be given.
+
+\begin{question}[3 pts.]
+Let $C_0, \dots, C_n$ be real numbers. Show that if $$C_0 + \frac{C_1} 2 + \dots + \frac{C_n}{n+1} = 0,$$ there exists at least one real $0 < x < 1$ such that $$C_0 + C_1x + \dots + C_nx^n = 0.$$ 
+\end{question}
+
+\begin{proof}
+Let $f(x) = C_0 + C_1x + \dots + C_nx^n$ and let $F$ be an antiderivative of $f$ defined by $$F(x) = C_0x + \frac{C_1x^2}{2} + \dots + \frac {C_nx^{n+1}}{n + 1}.$$ It is easy to verify that $F' = f.$ Since $F(0) = F(1) = 0,$ we may invoke the mean value theorem to see that there exists at least one $0 < x_0 < 1$ such that $$f(x_0) = F'(x_0) = \frac{F(1) - F(0)}{1 - 0} = 0.$$ Note that the application of the mean value theorem is justified by the fact that $F$ is a polynomial and is thus differentiable (and hence continuous) for all real numbers. A similar application of Rolle's theorem will yield the same result.
+\end{proof}
+
+\begin{question}[2 pts.]
+Let $x$ be a real number and suppose $|x| < 1.$ Show that $$\sum_{n = 0}^\infty x^n = \frac{1}{1 - x}.$$ You may assume that the Taylor series for $f(x) = \frac{1}{1-x}$ converges to $f(x)$ for $|x| < 1.$ However, you are not obligated to use the Taylor series to complete the proof.\\
+\end{question}
+
+\begin{proof}
+Let $f(x) = \frac{1}{1 - x}.$ Since $f^{(n)}(x) = \frac{n!}{(1 - x)^{n + 1}},$ the Maclaurin series for $f$ is $$\sum_{n = 0}^\infty = \frac{f^{(n)}(0)x^n}{n!} = \sum_{n = 0}^\infty x^n.$$ 
+
+For grading purposes, the proof is now complete. However, we are technically not done. We must show that the Taylor series for $f$ actually converges to $f$ for $|x| < 1$. A straightforward proof involves Taylor's theorem and the Cauchy form of the remainder, which is beyond the scope of this exam (and its solutions).
+\end{proof}
+
+\begin{question}[2 pt.]
+Show that if $f$ is a differentiable function defined for all real numbers which satisfies $$|f(x) - f(y)| \leq (x - y)^2$$ for all real numbers $x, y,$ then $f(x) = c$ for some constant $c.$
+\end{question}
+
+\begin{proof}
+Let $x_0$ be any real number. Observe that $$0 \leq \left|\frac{f(x) - f(x_0)}{x-x_0}\right| \leq \frac{(x-x_0)^2}{|x-x_0|} = |x-x_0|.$$ Since $\lim_{x \to x_0} |x - x_0| = 0,$ $$0 = \lim_{x \to x_0} \left|\frac{f(x) - f(x_0)}{x-x_0}\right| = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x-x_0} = f'(x_0)$$ by the definition of the derivative and the squeeze theorem. Because $x_0$ is arbitrary, we have shown that $f'(x) = 0$ for all $x.$ \\
+
+For grading purposes, the proof is complete. However, we are technically not done. We must show that a $f'(x) = 0$ for all $x$ implies that $f(x) = c$ for some constant $c.$ To do this, we invoke the mean value theorem. For any real numbers $x, y$, there exists some $z$ between $x$ and $y$ so that $$\frac{f(x) - f(y)}{x - y} = f'(z) = 0.$$ Thus $f(x) = f(y)$ for all real numbers $x, y$ and the proof is complete.
+\end{proof}
+
+\begin{question}[4 pt.]
+The gamma function is a special function in mathematics. It is defined by the improper integral $$\Gamma(x) = \int_0^\infty t^{x-1}e^{-t} \, dt$$ for all real numbers $x.$ The symbol "$\Gamma$" is read "gamma." Use integration by parts and L'Hospital's rule to show that for all integers $n > 0$, $$\Gamma(n+1) = n\Gamma(n).$$ 
+\end{question}
+
+\begin{proof}
+By integration by parts, we see that $$\Gamma(n + 1) = \left[-t^ne^{-t}\right]_0^\infty + n\int_0^\infty t^{n-1}e^{-t} \, dt.$$ Since $\lim_{x \to \infty} -x^ne^{-x} = 0$ by L'Hospital's rule, $\left[-x^ne^{-x}\right]_0^\infty = 0$ and $$\Gamma(n + 1) = n \int_0^\infty x^{n-1}e^{-x} \, dx = n\Gamma(n)$$ as required.
+\end{proof}
+
+\begin{question}[2 pt.]
+Use Question 4 to show that for integers $n > 0,$ $$\Gamma(n) = (n - 1)!$$ This property of the Gamma function makes it important in many areas of mathematics and physics (e.g. quantum mechanics, probability/statistics, complex analysis).
+\end{question}
+
+\begin{proof}
+We first recognize that $\Gamma(1) = \int_0^\infty e^{-x} = 1.$ If $n = 1,$ we are done since $0! = 1$. For $n > 1$, it follows from Question 4 that $$\Gamma(n) = (n-1)\Gamma(n-1) = \dots = (n-1)\dots(1)\Gamma(1) = (n - 1)!$$
+\end{proof}
+
+\end{document}
